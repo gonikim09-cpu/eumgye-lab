@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>음계연구소 | 소리의 수학</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a2e;--panel2:#172139;--line:#27334d;--text:#f2f5ff;--muted:#9aa8c4;--mint:#7cf4d2;--blue:#8da9ff;--pink:#ff9fc8;--yellow:#ffd782}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 85% -10%,#243a67 0,transparent 36%),radial-gradient(ellipse at 0% 20%,#123a45 0,transparent 30%),var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+.wrap{max-width:1100px;margin:auto;padding:22px 18px 60px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:28px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.03em}.logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--mint),var(--blue));display:grid;place-items:center;color:#091222;font-weight:900;font-size:19px}.pill{font-size:12px;border:1px solid #34425f;color:var(--muted);padding:6px 10px;border-radius:99px}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;margin-bottom:18px}.hero-main,.hero-side,.panel{border:1px solid var(--line);background:linear-gradient(145deg,rgba(23,33,57,.94),rgba(14,21,39,.94));border-radius:24px;padding:26px;box-shadow:0 16px 55px #0002}.eyebrow{color:var(--mint);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.hero h1{font-size:clamp(30px,5vw,50px);line-height:1.12;letter-spacing:-.055em;margin:12px 0 14px}.hero p{color:var(--muted);max-width:600px;margin:0}.hero-side{display:flex;flex-direction:column;justify-content:space-between;min-height:230px;background:linear-gradient(150deg,#183c4a,#172342 70%)}.metric-label{color:#b5c4dc;font-size:13px}.big-number{font-size:42px;font-weight:850;letter-spacing:-.05em;margin:5px 0}.small{font-size:13px;color:var(--muted)}.wave{height:55px;display:flex;align-items:center;gap:4px;margin-top:15px}.wave i{display:block;width:5px;border-radius:99px;background:linear-gradient(var(--mint),var(--blue));height:var(--h);opacity:.85}
+.nav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.nav button,.action{border:1px solid var(--line);background:#141d32;color:#b7c3dc;border-radius:12px;padding:11px 15px;font-weight:750;cursor:pointer}.nav button.active{background:var(--mint);color:#071421;border-color:var(--mint)}button:hover{filter:brightness(1.08)}.view{display:none}.view.active{display:block}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:5px 0 16px}.section-head h2{margin:0;font-size:24px;letter-spacing:-.04em}.section-head p{margin:4px 0 0;color:var(--muted);font-size:14px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.panel h3{margin:0 0 7px;font-size:17px}.panel p{margin:0;color:var(--muted);font-size:14px}.tag{display:inline-block;border:1px solid #33405c;border-radius:7px;padding:3px 7px;color:var(--mint);font-size:11px;font-weight:800;margin-bottom:12px}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#e8edff;background:#0a1020;border:1px solid #26324b;border-radius:12px;padding:14px;margin-top:14px;overflow:auto}.stat{font-size:25px;font-weight:850;letter-spacing:-.04em;margin:10px 0 3px}.slider-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin:18px 0}.slider-row input{width:100%;accent-color:var(--mint)}.value{color:var(--mint);font-weight:800;font-variant-numeric:tabular-nums}.note-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin-top:16px}.note{padding:12px 4px;border-radius:12px;border:1px solid #2b3854;background:#0d1527;text-align:center}.note strong{display:block;font-size:15px}.note span{font-size:11px;color:var(--muted)}.note.highlight{border-color:var(--mint);background:#163b3b}.bar-list{display:grid;gap:13px;margin-top:16px}.bar-line{display:grid;grid-template-columns:70px 1fr 70px;gap:10px;align-items:center;font-size:13px}.bar-bg{height:10px;background:#27334d;border-radius:99px;overflow:hidden}.bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--mint),var(--blue));width:0;transition:width .25s}.callout{border-left:3px solid var(--mint);padding:12px 15px;background:#112b32;border-radius:0 12px 12px 0;color:#dce9f5;margin-top:16px;font-size:14px}.footer{color:#7584a1;text-align:center;font-size:12px;margin-top:28px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.action.primary{background:var(--mint);color:#081523;border-color:var(--mint)}@media(max-width:720px){.hero,.grid2{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.hero-main,.hero-side,.panel{padding:20px}.hero-side{min-height:190px}.note-grid{grid-template-columns:repeat(4,1fr)}.section-head{align-items:start;flex-direction:column}.bar-line{grid-template-columns:55px 1fr 60px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><div class="brand"><div class="logo">∿</div><div>음계연구소<div class="small">SOUND × MATHEMATICS</div></div></div><span class="pill">INTERACTIVE LAB · 01</span></header>
+  <section class="hero">
+    <div class="hero-main"><div class="eyebrow">탐구 노트 / 수학과 음악</div><h1>소리는 어떻게<br><span style="color:var(--mint)">숫자</span>가 될까?</h1><p>피타고라스 음계의 간단한 정수비부터 12평균율의 지수적 비율까지. 직접 값을 바꾸며 음정 속에 숨은 수학을 탐험해 보자.</p>
+      <div class="actions"><button class="action primary" onclick="go('tuning')">실험 시작하기 ↗</button><button class="action" onclick="go('ideas')">핵심 개념 보기</button></div>
+    </div>
+    <div class="hero-side"><div><div class="metric-label">기준음 A4</div><div class="big-number">440 <span style="font-size:17px;color:var(--mint)">Hz</span></div><div class="small">1초에 440번 진동하는 소리</div></div><div class="wave" aria-hidden="true"><i style="--h:18px"></i><i style="--h:30px"></i><i style="--h:42px"></i><i style="--h:24px"></i><i style="--h:50px"></i><i style="--h:32px"></i><i style="--h:15px"></i><i style="--h:39px"></i><i style="--h:53px"></i><i style="--h:27px"></i><i style="--h:44px"></i><i style="--h:20px"></i><i style="--h:35px"></i><i style="--h:49px"></i><i style="--h:22px"></i><i style="--h:40px"></i><i style="--h:29px"></i><i style="--h:48px"></i><i style="--h:17px"></i><i style="--h:32px"></i></div></div>
+  </section>
+  <nav class="nav" aria-label="탐구 메뉴"><button class="active" data-view="overview">연구 대시보드</button><button data-view="ideas">핵심 개념</button><button data-view="tuning">음계 비교 실험</button><button data-view="frequency">주파수 계산기</button></nav>
+  <section id="overview" class="view active">
+    <div class="section-head"><div><h2>한눈에 보는 탐구</h2><p>음정은 감각으로 들리지만, 그 관계는 비율로 설명할 수 있다.</p></div><span class="pill">FIELD NOTES 01–03</span></div>
+    <div class="grid3">
+      <article class="panel"><span class="tag">01 · 비율</span><h3>간단한 정수비</h3><p>피타고라스 음계는 완전5도에 해당하는 3:2 비율을 중심으로 음을 쌓는다.</p><div class="stat">3 : 2</div><div class="small">완전5도 · 주파수 비율</div></article>
+      <article class="panel"><span class="tag">02 · 지수</span><h3>같은 간격의 12단계</h3><p>12평균율은 한 옥타브를 12개의 동일한 비율로 나눈다.</p><div class="stat">\(2^{1/12}\)</div><div class="small">반음마다 약 1.05946배</div></article>
+      <article class="panel"><span class="tag">03 · 비교</span><h3>작은 차이의 누적</h3><p>두 체계는 출발점이 다르며, 조율 방식에 따라 음정의 간격이 조금씩 달라진다.</p><div class="stat">12 steps</div><div class="small">한 옥타브를 만드는 방법</div></article>
+    </div>
+    <div class="grid2" style="margin-top:16px">
+      <article class="panel"><h3>탐구의 흐름</h3><p>비율을 이해하고 → 수치를 계산하고 → 두 체계의 결과를 비교한다.</p><div class="formula">피타고라스: f × (3/2)<br>12평균율: f × 2<sup>n/12</sup></div></article>
+      <article class="panel"><h3>이 실험에서 확인할 것</h3><p>기준 주파수를 바꾸거나 음의 단계를 선택하면 결과가 어떻게 변할까?</p><div class="callout">핵심 질문: 한 옥타브를 만드는 방식이 달라지면, 중간 음들의 주파수도 달라질까?</div></article>
+    </div>
+  </section>
+  <section id="ideas" class="view">
+    <div class="section-head"><div><h2>핵심 개념 카드</h2><p>수식보다 관계를 먼저 이해해 보자.</p></div></div>
+    <div class="grid2">
+      <article class="panel"><span class="tag">개념 A</span><h3>주파수와 음높이</h3><p>주파수는 1초 동안 반복되는 진동 횟수이며 단위는 Hz다. 일반적으로 주파수가 높을수록 높은 음으로 들린다.</p><div class="formula">주파수 f = 초당 진동 횟수</div></article>
+      <article class="panel"><span class="tag">개념 B</span><h3>비율은 음정의 핵심</h3><p>주파수 자체보다 두 주파수의 비율이 음정의 관계를 설명한다. 440Hz와 660Hz의 비는 3:2다.</p><div class="formula">660 ÷ 440 = 1.5 = 3/2</div></article>
+      <article class="panel"><span class="tag">개념 C</span><h3>등비수열과 평균율</h3><p>12평균율은 반음이 올라갈 때마다 같은 수를 더하는 대신 같은 비율을 곱한다. 그래서 주파수는 등비수열을 이룬다.</p><div class="formula">fₙ = f₀ × 2<sup>n/12</sup></div></article>
+      <article class="panel"><span class="tag">개념 D</span><h3>로그와 음높이 단계</h3><p>주파수 비율이 일정한 간격을 만들기 때문에, 음높이 단계를 주파수의 로그 관계로 이해할 수 있다.</p><div class="formula">n = 12 × log₂(fₙ / f₀)</div></article>
+    </div>
+  </section>
+  <section id="tuning" class="view">
+    <div class="section-head"><div><h2>음계 비교 실험</h2><p>반음 단계를 움직여 두 방식의 주파수를 비교해 봐.</p></div><span class="pill">LIVE CALCULATION</span></div>
+    <div class="grid2">
+      <article class="panel"><h3>실험 조건</h3><p>기준음은 A4 = 440Hz로 설정했어. 아래 슬라이더를 움직여 음의 단계를 선택해.</p>
+        <div class="slider-row"><input id="step" type="range" min="0" max="12" value="7"><span class="value" id="stepLabel">7 semitones</span></div>
+        <div class="small">선택한 단계: <strong id="noteName" style="color:var(--text)">E5 부근</strong></div>
+        <div class="formula" id="ratioFormula">12평균율 비율 = 2^(7/12)</div>
+      </article>
+      <article class="panel"><h3>계산 결과</h3><div class="small">12평균율 주파수</div><div class="stat" id="equalHz">659.26 Hz</div><div class="small">A4를 기준으로 한 음정</div><div class="bar-list"><div class="bar-line"><span>평균율</span><div class="bar-bg"><div class="bar-fill" id="equalBar"></div></div><b id="equalRatio">1.4983×</b></div><div class="bar-line"><span>3:2 기준</span><div class="bar-bg"><div class="bar-fill" id="pythBar"></div></div><b id="pythRatio">1.5000×</b></div></div><div class="callout" id="difference">완전5도 근처에서는 두 방식의 값이 매우 가깝다.</div></article>
+    </div>
+    <article class="panel" style="margin-top:16px"><h3>12평균율의 주파수 표</h3><p>기준음 A4에서 각 반음 단계로 이동한 주파수다.</p><div class="note-grid" id="noteGrid"></div></article>
+  </section>
+  <section id="frequency" class="view">
+    <div class="section-head"><div><h2>주파수 계산기</h2><p>기준 주파수와 반음 이동 수를 바꿔 직접 계산해 보자.</p></div></div>
+    <div class="grid2">
+      <article class="panel"><h3>입력값</h3><label for="baseHz" class="small">기준 주파수 (Hz)</label><div class="slider-row"><input id="baseHz" type="range" min="110" max="880" value="440" step="1"><span class="value" id="baseLabel">440 Hz</span></div><label for="move" class="small">이동할 반음 수</label><div class="slider-row"><input id="move" type="range" min="-12" max="24" value="12"><span class="value" id="moveLabel">+12</span></div><div class="formula">결과 = 기준 주파수 × 2<sup>(반음 수 / 12)</sup></div></article>
+      <article class="panel"><h3>계산 결과</h3><div class="small">계산된 주파수</div><div class="stat" id="calcHz">880.00 Hz</div><div class="small" id="calcDesc">기준음보다 한 옥타브 높음</div><div class="callout">반음 수가 12 증가하면 주파수는 2배가 된다. 즉 한 옥타브 위의 음이 된다.</div></article>
+    </div>
+  </section>
+  <footer class="footer">음계연구소 · 수학과 음악의 만나는 지점 · 학습용 인터랙티브 노트</footer>
+</div>
+<script>
+const names=['A4','A♯4/B♭4','B4','C5','C♯5/D♭5','D5','D♯5/E♭5','E5','F5','F♯5/G♭5','G5','G♯5/A♭5','A5'];
+function go(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===id));window.scrollTo({top:0,behavior:'smooth'});}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.view)));
+document.getElementById('step').addEventListener('input',updateTuning);
+function updateTuning(){let n=+document.getElementById('step').value;let eq=Math.pow(2,n/12),hz=440*eq;let pyth=Math.pow(3/2,n/7);document.getElementById('stepLabel').textContent=n+' semitone'+(n===1?'':'s');document.getElementById('noteName').textContent=names[n];document.getElementById('ratioFormula').textContent='12평균율 비율 = 2^('+n+'/12) = '+eq.toFixed(5);document.getElementById('equalHz').textContent=hz.toFixed(2)+' Hz';document.getElementById('equalRatio').textContent=eq.toFixed(4)+'×';document.getElementById('pythRatio').textContent=pyth.toFixed(4)+'×';document.getElementById('equalBar').style.width=Math.min(100,eq/2*100)+'%';document.getElementById('pythBar').style.width=Math.min(100,pyth/2*100)+'%';let diff=Math.abs(eq-pyth);document.getElementById('difference').textContent='두 비율의 차이: '+diff.toFixed(5)+'배. '+(diff<0.01?'이번 단계에서는 두 방식의 결과가 매우 가깝다.':'단계에 따라 두 방식의 비율 차이가 나타날 수 있다.');}
+const grid=document.getElementById('noteGrid');names.forEach((name,n)=>{let el=document.createElement('div');el.className='note'+(n===7?' highlight':'');el.innerHTML='<strong>'+name+'</strong><span>'+(440*Math.pow(2,n/12)).toFixed(1)+' Hz</span>';grid.appendChild(el);});
+function updateCalc(){let base=+document.getElementById('baseHz').value,n=+document.getElementById('move').value,result=base*Math.pow(2,n/12);document.getElementById('baseLabel').textContent=base+' Hz';document.getElementById('moveLabel').textContent=(n>0?'+':'')+n;document.getElementById('calcHz').textContent=result.toFixed(2)+' Hz';document.getElementById('calcDesc').textContent=n===0?'기준 주파수와 같음':n===12?'기준음보다 한 옥타브 높음':n===-12?'기준음보다 한 옥타브 낮음':n>0?'기준음보다 '+n+'반음 높음':'기준음보다 '+Math.abs(n)+'반음 낮음';}
+document.getElementById('baseHz').addEventListener('input',updateCalc);document.getElementById('move').addEventListener('input',updateCalc);updateTuning();updateCalc();
+</script>
+</body></html>
